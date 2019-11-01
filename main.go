@@ -6,11 +6,12 @@ import (
 	"time"
 )
 
+const winCount = 0
+
 func winHandler() (string, error) {
 	startDate := Date(2018, 7, 1)
 	currentDate := time.Now()
-	days := fmt.Sprintf("%f", currentDate.Sub(startDate).Hours()/24)
-	fmt.Println("Days since win: ", days)
+	days := fmt.Sprintf("Days since last win: %f number of wins: %d.", currentDate.Sub(startDate).Hours()/24, winCount)
 	return days, nil
 }
 
